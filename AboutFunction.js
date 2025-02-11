@@ -94,112 +94,117 @@
 
 //nested function 
 
-function parent(username){
-    // let username="Abhishek"
-    function child(website){
-        // let website="hello.com"
-        console.log(username+website);
-    }
-    // console.log(website)//website is not defined
-    child("hello")
-}
-parent("AbhishekS")//Abhishekhello.com  ->child access parent variables but parent cannot
+// function parent(username){
+//     // let username="Abhishek"
+//     function child(website){
+//         // let website="hello.com"
+//         console.log(username+website);
+//     }
+//     // console.log(website)//website is not defined
+//     child("hello")
+// }
+// parent("AbhishekS")//Abhishekhello.com  ->child access parent variables but parent cannot
  
 
-//hoisting
-// add(2,4)//6
-// function add(a,b){
-//    console.log(a+b);
-// }
+// //hoisting
+// // add(2,4)//6
+// // function add(a,b){
+// //    console.log(a+b);
+// // }
 
-// // add(2,4);//6
-// res(4,5)// Cannot access 'res' before initialization
-// const res=function mutltiply(a,b){
-//     console.log(a*b);
-// }
+// // // add(2,4);//6
+// // res(4,5)// Cannot access 'res' before initialization
+// // const res=function mutltiply(a,b){
+// //     console.log(a*b);
+// // }
 
-// res(4,5)//20
+// // res(4,5)//20
 
-//+++++++++ use of this +++++++//
+// //+++++++++ use of this +++++++//
 
-//code without this
-// const user={
-//     username:"Abhishek",
-//     location:"ghaziabad",
-//     welcomemessage:function(username,location){
-//         return `welcome ${username} to ${location} `
-//     }
-// }
-// console.log(user.welcomemessage(user.username,user.location))
-// user.username="shyam"
-// console.log(user.welcomemessage(user.username,user.location))
+// //code without this
+// // const user={
+// //     username:"Abhishek",
+// //     location:"ghaziabad",
+// //     welcomemessage:function(username,location){
+// //         return `welcome ${username} to ${location} `
+// //     }
+// // }
+// // console.log(user.welcomemessage(user.username,user.location))
+// // user.username="shyam"
+// // console.log(user.welcomemessage(user.username,user.location))
 
 
 
-// code with this->return current context
-// const user={
-//     username:"Abhishek",
-//     location:"ghaziabad",
-//     welcomemessage:function(){
-//         // console.log(this)
-//         // return `welcome ${this.username} to ${this.location} `
-//     }
-// }
-// console.log(user.welcomemessage())
+// // code with this->return current context
+// // const user={
+// //     username:"Abhishek",
+// //     location:"ghaziabad",
+// //     welcomemessage:function(){
+// //         // console.log(this)
+// //         // return `welcome ${this.username} to ${this.location} `
+// //     }
+// // }
+// // console.log(user.welcomemessage())
 
-// user.username="Ram";
-// console.log(user.welcomemessage())
+// // user.username="Ram";
+// // console.log(user.welcomemessage())
 
-// console.log(this)
+// // console.log(this)
 
-// function one(){
-//     console.log(this)
-// }
+// // function one(){
+// //     console.log(this)
+// // }
 
+// // one();
+
+// const two =function(){
+//     let username="Abhishek"
+//     console.log(this.username);
+// }  
+// two();
+// const one =()=>{
+//     let username="Abhishek"
+//     console.log(this.username);
+// }  
 // one();
 
-const two =function(){
-    let username="Abhishek"
-    console.log(this.username);
-}  
-two();
-const one =()=>{
-    let username="Abhishek"
-    console.log(this.username);
-}  
-one();
 
+// //implecit return 
 
-//implecit return 
-
-// const implecit = (num1,num2)=> (num1+num2);
-const implecit = ()=> ({username:"Abhishek"});
-const explecit = (num1,num2)=> {
-    return num1+num2;
+// // const implecit = (num1,num2)=> (num1+num2);
+// const implecit = ()=> ({username:"Abhishek"});
+// const explecit = (num1,num2)=> {
+//     return num1+num2;
     
+// }
+
+// // console.log(implecit(4,5));
+// console.log(implecit())
+
+// console.log(explecit(4,10));
+
+
+// //+++++++++++++++IIFE+++++++//
+
+// (function iifee(){
+//     console.log("I am name iinfe")
+// })();
+
+// (()=>{
+//    console.log("I am simple iife") 
+// })();//semicolon is required t0 exexute next iife function
+
+// (()=>{
+//    console.log(`I am simple ${name}`) 
+// })("iffe")
+
+var c=100;
+if(true){
+    var c=200;
+    console.log(c);
 }
-
-// console.log(implecit(4,5));
-console.log(implecit())
-
-console.log(explecit(4,10));
-
-
-//+++++++++++++++IIFE+++++++//
-
-(function iifee(){
-    console.log("I am name iinfe")
-})();
-
-(()=>{
-   console.log("I am simple iife") 
-})();//semicolon is required t0 exexute next iife function
-
-(()=>{
-   console.log(`I am simple ${name}`) 
-})("iffe")
-
-
+console.log(c);
 
 
 
